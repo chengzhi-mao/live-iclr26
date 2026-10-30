@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Dataset download cards; inline so only index.html needs updating. */
+        .dataset-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0 28px; }
+        .dataset-card { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; border: 1px solid #e9ecef; border-radius: 8px; background: #f8f9fa; }
+        .dataset-name { font-weight: 700; color: #2c3e50; }
+        .dataset-meta { display: block; font-size: .87rem; color: #666; margin-top: 3px; }
+        .dataset-download { display: inline-flex; align-items: center; gap: 7px; background: #3498db; color: #fff; padding: 9px 13px; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; }
+        .dataset-download:hover { background: #2980b9; color: #fff; }
+        .dataset-note { font-size: .9rem; color: #666; }
+        @media (max-width: 650px) { .dataset-grid { grid-template-columns: 1fr; } .dataset-card { flex-wrap: wrap; } }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -52,7 +63,7 @@
             <a href="#" class="link-button">
                 <i class="fas fa-file-pdf"></i> Paper
             </a>
-            <a href="#" class="link-button">
+            <a href="#datasets" class="link-button">
                 <i class="fas fa-database"></i> Dataset
             </a>
         </section>
@@ -257,6 +268,39 @@
                     LIVE consistently outperforms vision-only and fusion-based baselines across multiple benchmarks.
                 </p>
             </div>
+        </section>
+
+        <!-- LIVE Dataset Downloads -->
+        <section class="section" id="datasets">
+            <h2>Dataset Downloads</h2>
+            <p>We release the LIVE-labeled training datasets and evaluation annotations used in our experiments. Files are hosted on Google Drive in compressed TFRecord format.</p>
+            <h3>Training Datasets</h3>
+            <div class="dataset-grid">
+                <div class="dataset-card">
+                    <div><span class="dataset-name">ImageNet LIVE-Labeled</span><span class="dataset-meta">8.16 GB · .tfrecord.gz</span></div>
+                    <a class="dataset-download" href="https://drive.google.com/file/d/13JaFGy_YN7zG9Ds_I-O8DyrPX0r2YSFA/view" target="_blank" rel="noopener noreferrer" aria-label="Get ImageNet LIVE-Labeled from Google Drive"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+                <div class="dataset-card">
+                    <div><span class="dataset-name">CC3M LIVE-Labeled</span><span class="dataset-meta">7.78 GB · .tfrecord.gz</span></div>
+                    <a class="dataset-download" href="https://drive.google.com/file/d/1DxcawI69qZeKriDlEjvCIB0hwN9HkR8S/view" target="_blank" rel="noopener noreferrer" aria-label="Get CC3M LIVE-Labeled from Google Drive"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+            </div>
+            <h3>Evaluation Datasets</h3>
+            <div class="dataset-grid">
+                <div class="dataset-card">
+                    <div><span class="dataset-name">SUN</span><span class="dataset-meta">1.40 MB · .tfrecord.gz</span></div>
+                    <a class="dataset-download" href="https://drive.google.com/file/d/1PYXIEqXeHb34NUaN7vnRm-q7fJCBPNG1/view" target="_blank" rel="noopener noreferrer" aria-label="Get SUN from Google Drive"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+                <div class="dataset-card">
+                    <div><span class="dataset-name">RefCOCO</span><span class="dataset-meta">277 KB · .tfrecord.gz</span></div>
+                    <a class="dataset-download" href="https://drive.google.com/file/d/1ol7Mpj8ihH9qPhSflOdRTj6hZKSZbdSM/view" target="_blank" rel="noopener noreferrer" aria-label="Get RefCOCO from Google Drive"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+                <div class="dataset-card">
+                    <div><span class="dataset-name">Caltech-101</span><span class="dataset-meta">325 KB · .tfrecord.gz</span></div>
+                    <a class="dataset-download" href="https://drive.google.com/file/d/1F9aiGHr6XMaNHUKywrl9RSl5PBj9M9MM/view" target="_blank" rel="noopener noreferrer" aria-label="Get Caltech-101 from Google Drive"><i class="fas fa-download" aria-hidden="true"></i> Download</a>
+                </div>
+            </div>
+            <p class="dataset-note">Google Drive may show a preview or confirmation page before starting a download. Access requires that the files are shared with visitors.</p>
         </section>
 
         <!-- Citation -->
